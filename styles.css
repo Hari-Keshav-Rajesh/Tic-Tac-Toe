@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10vh;
+    background-color: lightblue;
+}
+
+.restart{
+    height: 7vh;
+    width: 20vh;
+    color: black;
+    background-color: yellow;
+    font-size: 2vh;
+    font-weight: bold;
+}
+
+.title{
+    font-size:6vh;
+}

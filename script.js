@@ -11,9 +11,13 @@ for(let i=0;i<3;i++){
     for(let j=0;j<3;j++){
         let row=document.createElement("button");
         row.style.cssText="width:50px;height:50px;";
-        row.style.border="thin double red"
+        row.style.border="thin double white"
         row.classList.add("square");
         column.appendChild(row);
+        row.style.width = "50vh";
+        row.style.height = "20vh";
+        row.style.fontSize = "10vh";
+        row.style.backgroundColor = "black";
         row.addEventListener('click',() =>{
             player = getActivePlayer();
             if(player===playerOne){
@@ -21,12 +25,14 @@ for(let i=0;i<3;i++){
                 board[i][j]='X';
                 switchPlayer();
                 result();
+                row.style.color = "blue";
             }
             else{
                 row.innerHTML='O';
                 board[i][j]='O';
                 switchPlayer();
                 result();
+                row.style.color = "red";
             }
         row.disabled = true;
         })
@@ -58,6 +64,7 @@ function result(){
         (board[0][2]==='X'&&board[1][1]==='X'&&board[2][0]==='X')===true
     ){
         alert("Player X wins");
+        location.reload();
     }
 
     else if(
@@ -71,6 +78,7 @@ function result(){
         (board[0][2]==='O'&&board[1][1]==='O'&&board[2][0]==='O')===true
     ){
         alert("Player Y wins")
+        location.reload();
     }
     
     else{
@@ -85,6 +93,7 @@ function result(){
         }
         if(tie===true){
             alert("The game is a tie");
+            location.reload();
         }
     }
 }
