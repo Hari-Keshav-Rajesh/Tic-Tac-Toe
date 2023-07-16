@@ -4,11 +4,12 @@ playerOne = "Player One";
 playerTwo = "Player Two";
 let activePlayer = playerOne;
 
+
 for(let i=0;i<3;i++){
     let column=document.createElement("div");
     column.classList.add("column");
     for(let j=0;j<3;j++){
-        let row=document.createElement("div");
+        let row=document.createElement("button");
         row.style.cssText="width:50px;height:50px;";
         row.style.border="thin double red"
         row.classList.add("square");
@@ -27,6 +28,7 @@ for(let i=0;i<3;i++){
                 switchPlayer();
                 result();
             }
+        row.disabled = true;
         })
     }
     column.style.display="flex";
@@ -87,5 +89,9 @@ function result(){
     }
 }
 
+const restart = document.querySelector(".restart");
 
+restart.addEventListener('click',() =>{
+    location.reload();
+});
 
